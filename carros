@@ -1,0 +1,43 @@
+
+package lista.pkg3.exercicio.pkg2;
+
+
+public class Carro extends veiculos {
+    private double km;
+    
+    public Carro(String modelo, double preco,double km){
+        super(modelo, preco);
+        this.km = km;
+        
+    }
+
+    
+    public double getKm() {
+        return km;
+    }
+
+    
+    public void setKm(double km) {
+        this.km = km;
+    }
+    
+    
+    @Override
+    public double getPreco(){
+         if(this.km > 100000){
+            super.setPreco(super.getPreco() - ((super.getPreco() * 10) / 100));
+        }else{
+           System.out.println("Preco sem alteracao");
+        }
+        return super.getPreco();
+    }
+    
+    @Override
+    public String toString(){
+        return "Modelo: " + super.modelo
+             + "\npreco: " +super.preco
+             + "\nKilometragem: "+km
+             + "\nNovo preco: "+getPreco();
+        
+    }
+}
