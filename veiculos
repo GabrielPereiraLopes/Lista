@@ -1,0 +1,27 @@
+
+package lista.pkg3.exercicio.pkg2;
+
+public class veiculos {
+    double preco;    
+    String modelo;
+    
+    public veiculos(String modelo, double preco) {
+        this.preco = preco; 
+        this.modelo= modelo;
+}
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+   
+    public void printDados(){
+        System.out.println("Modelo: "+modelo+ "preco: "+preco);
+        
+        
+    }
+
+}
