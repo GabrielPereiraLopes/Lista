@@ -1,0 +1,75 @@
+package lista.pkg3.exercicio.pkg2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Main {
+    
+    public static void main(String[] args) {
+        ArrayList<moto> Lista = new ArrayList<>(); 
+        ArrayList<Carro> Lista1 = new ArrayList<>(); 
+        Scanner sc = new Scanner(System.in);
+        int escolha ;
+        double preco;
+        
+        
+        do{
+            System.out.println("Digite a opcao desejada:"); 
+            System.out.println("0 - Sair do programa ");
+            System.out.println("1 -Verificar moto");
+            System.out.println("2 -Verificar carro "); 
+            System.out.println("3 -Listar Todos as motos");
+            System.out.println("4 -Listar Todos os carros");
+            escolha = sc.nextInt();
+            sc.nextLine();
+            
+            switch (escolha){
+                case 1 -> {
+                    System.out.println("Digite o modelo da moto:");
+                    String modelo = sc.nextLine();
+                    System.out.println("Digite o preco da moto:");
+                    preco = sc.nextDouble();
+                    System.out.println("Digite o ano da moto:");
+                    int ano = sc.nextInt();
+                    moto teste = new moto(modelo,preco,ano);
+                    Lista.add(teste);
+
+                    System.out.println("Moto cadastrada! ");
+                    break;
+                    }
+
+                case 2 -> {   /// Cadastro de Produto
+                    System.out.println("Digite o modelo do carro:");
+                    String modelo = sc.nextLine();
+                    System.out.println("Digite o preco do carro:");
+                    preco = sc.nextDouble();
+                    System.out.println("Digite a kilometragem do carro:");
+                    double km = sc.nextDouble();
+                    Carro teste1 = new Carro(modelo,preco,km);
+                    Lista1.add(teste1);
+
+                    System.out.println("Carro cadastrada! ");
+                    break;
+                }
+                
+                case 3 -> {/// Listar motos
+                    for (moto i : Lista) {
+                        System.out.println(i);  
+                    }
+                    break; 
+            }
+            
+                case 4 -> {/// Listar carros
+                    for (Carro i : Lista1) {
+                        System.out.println(i);
+
+                    break;   
+                    }
+            }
+            }   
+
+        }while(escolha != 0);
+    
+}
+}
