@@ -1,0 +1,52 @@
+
+package lista.pkg3.exercicio.pkg2;
+
+
+public class moto extends veiculos {
+    private int ano;
+    
+    
+    public moto(String modelo, double preco,int ano){
+        super(modelo,preco);
+        this.ano = ano;
+        
+    }
+
+    
+    public int getAno() {
+        return ano;
+    }
+
+    
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+    
+    
+    public void insertData(){
+        if(ano >= 2008){
+            System.out.println("Preco sujeito a alteracao");
+        }else{
+           System.out.println("Preco sem alteracao");
+        }
+        
+    }
+    @Override
+    public double getPreco(){
+         if(ano >= 2008){
+            super.setPreco(super.getPreco() + ((super.getPreco() * 10) / 100));
+        }else{
+           System.out.println("Preco sem alteracao");
+        }
+        return super.getPreco();
+    }
+    
+    @Override
+    public String toString(){
+        return "Modelo: " + super.modelo
+             + "\npreco: " +super.preco
+             + "\nano: "+ano
+             + "\nNovo preco: "+getPreco();
+        
+    }
+}
